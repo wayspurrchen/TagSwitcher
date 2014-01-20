@@ -3,7 +3,7 @@ $('.tags-list-item').on('click', function() {
 	$('.tags-list-item.active').removeClass('active');
 	$(this).addClass('active');
 	$('.tags-info.active').removeClass('active');
-	$('.tags-info[data-tag-id=' + id + ']').addClass('active');
+	$('.tags-info[data-tag-id="' + id + '"]').addClass('active');
 	$('.update-information').empty();
 });
 

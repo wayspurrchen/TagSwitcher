@@ -55,6 +55,14 @@
 			$tag_detail_holder = array();
 			exec("git show $label", $tag_detail_holder);
 
+			if (substr($tag_detail_holder[0], 0, 4) !== 'tag ') {
+				continue;
+			}
+
+			/*echo '<pre>';
+			var_dump($tag_detail_holder);
+			echo '</pre>';*/
+
 			$tag_objects[$label] = array();
 			$tag_objects[$label]['tag_author'] = $tag_detail_holder[1];
 			$tag_objects[$label]['tag_date'] = $tag_detail_holder[2];
@@ -74,7 +82,11 @@
 					$commit_index = $i;
 					break;
 				} else {
-					$tag_message .= $tag_detail_holder[$i];
+					if (strlen($tag_detail_holder[$i]) != 0) {
+						$tag_message .= $tag_detail_holder[$i];
+					} else {
+						$tag_message .= "<br><br>";
+					}
 				}
 			}
 
@@ -89,7 +101,11 @@
 				if (substr($tag_detail_holder[$i], 0, 7) == 'diff --') {
 					break;
 				} else {
-					$commit_message .= $tag_detail_holder[$i];
+					if (strlen($tag_detail_holder[$i]) != 0) {
+						$commit_message .= $tag_detail_holder[$i] . "<br>";
+					} else {
+						$commit_message .= "<br><br>";
+					}
 				}
 			}
 
@@ -125,7 +141,7 @@
 					</div>
 					<h2 class="tag-section-header">Commit Details</h2>
 					<div class="tag-section-details">
-						<h2 class="tag-section-message"><?= $tag['commit_message'] ?></h2>
+						<p class="tag-section-message"><?= $tag['commit_message'] ?></p>
 						<p class="tag-section-date"><?= $tag['commit_date'] ?></p>
 					</div>
 					<button data-tag-id="<?= $tag_label ?>" class="activate-tag">Activate Version</button>

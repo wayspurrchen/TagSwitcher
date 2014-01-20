@@ -70,6 +70,7 @@ body {
 	height: 100%;
 	float: right;
 	padding: 20px;
+	overflow-y: scroll;
 }
 
 .tags-section-header {
@@ -81,8 +82,12 @@ body {
 	margin-left: 20px;
 }
 
-.tags-info-container h2 {
-	margin: 0;
+.tags-info-container .tag-section-title {
+	margin-bottom: 0;
+}
+
+.tags-info-container .tag-section-message {
+	font-size: 14px;
 }
 
 .tags-info-container .tag-section-date {
