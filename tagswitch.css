@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #eee;
+	font-family: 'Open Sans';
+}
+
+.page-title {
+	font-size: 60px;
+	text-align: center;
+}
+
+.tags-container {
+	border: 1px solid #ccc;
+	position: absolute;
+	background-color: #fff;
+	height: 600px;
+	width: 800px;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -400px;
+}
+
+.tags-list {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow-y: scroll;
+	width: 42%;
+	height: 100%;
+}
+
+.tags-list-item {
+	cursor: pointer;
+	padding: 5px 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.tags-list-item:hover,
+.tags-list-item:active {
+	background-color: #DDFFDD;
+}
+
+.tags-list-item .tag-title {
+	margin: 0;
+	font-size: 22px;
+}
+
+.tags-list-item .tag-message {
+	font-size: 14px;
+}
+
+.tags-list-item .tag-date {
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.tags-list-item.active {
+	background-color: #CCFFCC;
+}
+
+.tags-info-container {
+	width: 58%;
+	height: 100%;
+	float: right;
+	padding: 20px;
+}
+
+.tags-section-header {
+	margin-bottom: 10px;
+}
+
+.tags-info-container .tag-section-details {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.tags-info-container h2 {
+	margin: 0;
+}
+
+.tags-info-container .tag-section-date {
+	font-size: 12px;
+	margin-top: 0px;
+}
+
+.tags-info {
+	display: none;
+}
+
+.tags-info.active {
+	display: block;
+}
+
+.activate-tag {
+	display: block;
+	margin: 50px auto 0;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+}
